@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+PKG_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/~.*//')
+PKG_SOURCE  := $(shell jq -r '.name' composer.json)
+
+%:
+	dh $@
+
+override_dh_auto_build:
+
+override_dh_auto_test:
+
+override_dh_install:
+	mkdir -p debian/php-phpdocumentor-guides-restructured-text/usr/share/php/phpDocumentor/Guides
+	cp -r src/. debian/php-phpdocumentor-guides-restructured-text/usr/share/php/phpDocumentor/Guides/
