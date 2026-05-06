@@ -1,0 +1,19 @@
+Source: php-phpdocumentor-guides-restructured-text
+Section: php
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper-compat (= 13), jq
+Standards-Version: 4.6.2
+Homepage: https://github.com/phpDocumentor/guides-restructured-text
+Vcs-Git: https://github.com/Vitexus/php-phpdocumentor-guides-restructured-text.git
+Rules-Requires-Root: no
+
+Package: php-phpdocumentor-guides-restructured-text
+Architecture: all
+Depends: ${misc:Depends}, php-cli | php, composer,
+ php-phpdocumentor-guides,
+ php-doctrine-lexer,
+ php-webmozart-assert,
+ php-league-csv
+Description: ReStructuredText rendering extension for phpDocumentor guides
+ Provides reStructuredText format parsing support for phpDocumentor guides.
